@@ -1,0 +1,40 @@
+﻿@model Warehouse.Models.VMLogin;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/boottheme.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Warehouse.styles.css" asp-append-version="true" />
+    <title>CreateUser</title>
+</head>
+<body>
+    <div style="padding: 20px; padding-left: 40px">
+        <form asp-controller="VMLogins" asp-action="Create" method="post">
+            <h1>Create new user</h1>
+            <br />
+            <input type="text" placeholder="username" asp-for="User" />
+            <input type="password" placeholder="password" asp-for="Pwd" />
+            <button class="btn btn-primary" type="submit">Register</button>
+            <a href="@Url.Action("Login", "Access")" class="btn btn-primary">Back</a>
+
+            @if (ViewData["ValidateMessage"] != null)
+            {
+                <br />
+                <br />
+                <label>@ViewData["ValidateMessage"]</label>
+            }
+        </form>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+</body>
+</html>

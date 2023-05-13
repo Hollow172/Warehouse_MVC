@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Warehouse.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Categories of products</h1>
+<br />
+
+<table class="table" style="width: 80%">
+    <thead>
+        <tr class="table-primary">
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr class="table-secondary">
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

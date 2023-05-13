@@ -1,0 +1,15 @@
+﻿@model Warehouse.Models.VMLogin
+@{
+    ViewData["Title"] = "DeleteUser";
+}
+
+<h1>Are you sure you want to delete your account?</h1>
+<h2>You will be logged out afterwards</h2>
+<div>
+    <form method="post" asp-controller="Access" asp-action="DeleteUser" style="display:inline-block">
+        <button type="submit" class="btn btn-primary">Yes</button>
+    </form>
+    <button onclick="location.href='@Url.Action("Index", "Home")'" style="display:inline-block" class="btn btn-primary">No</button>
+</div>
+
+
